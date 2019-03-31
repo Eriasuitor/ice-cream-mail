@@ -1,0 +1,28 @@
+{
+  "name": "ice-cream-mail",
+  "version": "1.0.0",
+  "description": "Take an ice cream when you feel hot.",
+  "main": "app.1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eriasuitor/ice-cream-mail.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eriasuitor/ice-cream-mail/issues"
+  },
+  "homepage": "https://github.com/Eriasuitor/ice-cream-mail#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-google": "^0.12.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "dependencies": {
+    "eslint-config-standard": "^12.0.0"
+  }
+}
