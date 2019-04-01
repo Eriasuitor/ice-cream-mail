@@ -27,7 +27,7 @@ exports.initQQMail = async ({user = '948471414', pass = 'wyrxdbhgqrcjbdah'}) => 
   return transporter
 }
 
-exports.newQQMail = async ({user = '948471414', pass = 'wyrxdbhgqrcjbdah', subject, from = "LoryJiang <948471414@qq.com>", to = 'funtree9@icloud.com', text, html = "<h1>whoareyou</h1>"}) => {
+exports.newQQMail = async ({user = '948471414', pass = 'wyrxdbhgqrcjbdah', subject, from = "LoryJiang <948471414@qq.com>", to = 'funtree9@icloud.com', text, html = "<h1>whoareyou</h1>", cc, bcc}) => {
   let mailer = user2Mailer.get(user)
   console.log(mailer)
     !mailer &&  (mailer = await exports.initQQMail({user, pass}))

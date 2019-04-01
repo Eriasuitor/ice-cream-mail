@@ -5,9 +5,18 @@ const app = express()
 
 app.use(express.json())
 
+app.all('*', function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  //Access-Control-Allow-Headers ,可根据浏览器的F12查看,把对应的粘贴在这里就行
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Methods', '*');
+  res.header('Content-Type', 'application/json;charset=utf-8');
+  next();
+})
+
 app.post('/login', MailController.login)
 
-app.post('/login', MailController.send)
+app.post('/mail', MailController.send)
 
 app.use((err, req, res, next) => {
   if (err) {
@@ -23,7 +32,3 @@ app.use((err, req, res, next) => {
 
 app.listen(11081)
 
-let data = require('fs').readFileSync('./data.csv').toString().split('\n').map(_ => _.split(','))
-let fieldName = data.shift()
-let dataArray = data.map(_ => fieldName.reduce((a, b, index) => Object.assign(a, {[b]:_[index]}), {}))
-console.log(dataArray)

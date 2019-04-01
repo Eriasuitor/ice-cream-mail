@@ -5,7 +5,7 @@ exports.login = async (req, res) => {
 		await QQMailService.initQQMail(req.body)
 		return res.json({success: true}).status(200)
 	} catch (error) {
-		return res.json({success: false}).status(405)
+		return res.status(203).json({success: false, errorMsg: error.message})
 	}
 }
 
@@ -14,6 +14,6 @@ exports.send = async (req, res) => {
 		await QQMailService.newQQMail(req.body)
 		return res.json({success: true}).status(200)
 	} catch (error) {
-		return res.json({success: false}).status(405)
+		return res.status(203).json({success: false, errorMsg: error.message})
 	}
 }
